@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<title>東京23区分マップ</title>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/main.css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=drawing,geometry"></script>
+<script type="text/javascript" src="./js/map.js"></script>
+<script type="text/javascript" src="./js/data.js"></script>
+<script type="text/javascript" src="./js/current.js"></script>
+
+<script type="text/javascript">
+
+$(function(){
+  _.mapLoad();
+  for(var i = 0; i < 23; ++i) {
+	  _.area.create(i);
+  }
+});
+
+</script>
+
+</head>
+<body>
+
+<div id="mainbar">
+  <div id="map_wrapper">
+    <div id="map_canvas"></div>
+  </div>
+  <button class="btn btn-primary form-control" style="height: 50px" onclick="start_func();">現在地</button>
+</div>
+
+</body>
+</html>
